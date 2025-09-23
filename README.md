@@ -2,15 +2,6 @@
 
 Consider this repository to be a cache layer for meetup.mu API.
 
-## ⚡ Why Bun?
-
-This project uses [Bun](https://bun.sh) for TypeScript execution, which provides:
-
-- **Native TypeScript support** - No compilation step needed
-- **Blazing fast performance** - Significantly faster than Node.js
-- **Built-in fetch** - No additional dependencies required
-- **Zero configuration** - Works out of the box with TypeScript
-
 ## 📁 Data Structure
 
 The fetcher retrieves data from the meetup.mu api endpoints and stores them in organized JSON files.
