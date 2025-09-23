@@ -14,20 +14,6 @@
     "attendees": 0
   },
   {
-    "id": 9220,
-    "type": "meetup",
-    "community": "frontendmu",
-    "title": "Fake data for test",
-    "abstract": "",
-    "location": "Le Wagon - St Pierre",
-    "registration": "https://frontend.mu/meetup/17",
-    "date": "2022-05-21T00:00:00.000000Z",
-    "capacity": 50,
-    "meetup_id": "frontendmu-17",
-    "rsvp": 0,
-    "attendees": 0
-  },
-  {
     "id": 9231,
     "type": "meetup",
     "community": "frontendmu",
