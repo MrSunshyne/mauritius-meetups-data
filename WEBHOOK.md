@@ -528,7 +528,7 @@ async function triggerWithRetry(maxRetries = 3) {
 **API Integration template:**
 ```bash
 curl -X POST https://api.github.com/repos/MrSunshyne/mauritius-meetups-data/dispatches \
-  -H "Authorization: Bearer ghp_YOUR_TOKEN_HERE" \
+  -H "Authorization: Bearer github_pat_YOUR_TOKEN_HERE" \
   -H "Accept: application/vnd.github.v3+json" \
   -H "Content-Type: application/json" \
   -d '{"event_type": "fetch-meetup-data"}'
@@ -539,11 +539,11 @@ curl -X POST https://api.github.com/repos/MrSunshyne/mauritius-meetups-data/disp
 git clone https://github.com/MrSunshyne/mauritius-meetups-data.git
 cd mauritius-meetups-data
 pnpm install
-GITHUB_TOKEN=ghp_YOUR_TOKEN_HERE pnpm run trigger
+GITHUB_TOKEN=github_pat_YOUR_TOKEN_HERE pnpm run trigger
 ```
 
 ### Common URLs
-- **Token creation**: https://github.com/settings/tokens
+- **Fine-grained token creation**: https://github.com/settings/personal-access-tokens/new
 - **Repository access**: https://github.com/MrSunshyne/mauritius-meetups-data/settings/access
 - **Actions tab**: https://github.com/MrSunshyne/mauritius-meetups-data/actions
 - **API endpoint**: https://api.github.com/repos/MrSunshyne/mauritius-meetups-data/dispatches
