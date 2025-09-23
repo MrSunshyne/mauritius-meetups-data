@@ -1,0 +1,91 @@
+name: Fetch Meetup Data
+
+on:
+  # Run daily at 8 AM UTC (covers most timezones for daily updates)
+  schedule:
+    - cron: '0 8 * * *'
+  
+  # Allow manual triggering from GitHub UI
+  workflow_dispatch:
+  
+  # Webhook trigger from external services
+  repository_dispatch:
+    types: [fetch-meetup-data]
+
+jobs:
+  fetch-data:
+    name: Fetch and Update Meetup Data
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Required to commit changes
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full git history for better commit context
+      
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Fetch meetup data
+        run: bun start
+        env:
+          # Ensure consistent timezone for data fetching
+          TZ: UTC
+      
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n $(git status --porcelain data/) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "📝 Changes detected in meetup data"
+            git status --porcelain data/
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "✅ No changes in meetup data - all up to date!"
+          fi
+      
+      - name: Commit and push changes
+        if: steps.changes.outputs.changes == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update meetup data'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_author: 'GitHub Actions <github-actions[bot]@users.noreply.github.com>'
+          file_pattern: 'data/**/*.json'
+          skip_dirty_check: false
+          skip_fetch: false
+          skip_checkout: false
+          disable_globbing: false
+      
+      - name: Log no changes
+        if: steps.changes.outputs.changes == 'false'
+        run: |
+          echo "::notice title=No Changes::All meetup data is already up to date. No commit necessary."
+      
+      - name: Summary
+        run: |
+          echo "## 📊 Fetch Summary" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ steps.changes.outputs.changes }}" == "true" ]]; then
+            echo "✅ **Status**: Data updated successfully" >> $GITHUB_STEP_SUMMARY
+            echo "🔄 **Action**: Changes committed to repository" >> $GITHUB_STEP_SUMMARY
+            echo "📁 **Files**: Updated meetup data in \`data/\` directory" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ **Status**: Data already up to date" >> $GITHUB_STEP_SUMMARY
+            echo "🔄 **Action**: No commit necessary" >> $GITHUB_STEP_SUMMARY
+            echo "📁 **Files**: No changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "⏰ **Time**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY

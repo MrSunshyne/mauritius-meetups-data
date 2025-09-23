@@ -68,6 +68,46 @@ pnpm run dev
 - `pnpm dev` - Development mode (same as start)
 - `bun src/index.ts` - Direct execution with Bun
 
+## 🤖 Automated Data Updates
+
+The repository includes a GitHub Action that automatically fetches and updates meetup data daily.
+
+### How It Works
+
+The GitHub Action (`.github/workflows/fetch-meetup-data.yml`):
+
+1. **Runs daily at 8 AM UTC** - Ensures fresh data every day
+2. **Can be triggered manually** - Via GitHub's "Actions" tab
+3. **Fetches all meetup data** - Using the same Bun-powered script
+4. **Smart commits** - Only commits when data actually changes
+5. **Clean logging** - Shows exactly what was updated
+
+### Manual Trigger
+
+You can manually trigger the data fetch from GitHub:
+
+1. Go to the "Actions" tab in the repository
+2. Select "Fetch Meetup Data" workflow
+3. Click "Run workflow"
+4. The action will fetch data and commit any changes
+
+### Webhook Support
+
+External services can trigger data fetches by calling GitHub's repository dispatch API directly:
+
+**Webhook URL:** `https://api.github.com/repos/MrSunshyne/mauritius-meetups-data/dispatches`
+
+**Required Headers:**
+```
+Authorization: Bearer YOUR_GITHUB_TOKEN
+Accept: application/vnd.github.v3+json
+Content-Type: application/json
+```
+
+**Body:** `{"event_type": "fetch-meetup-data"}`
+
+See [`WEBHOOK.md`](WEBHOOK.md) for complete integration guide with examples in multiple languages.
+
 ## 🔧 Configuration
 
 The fetcher is configured in `src/config.ts`. You can:
