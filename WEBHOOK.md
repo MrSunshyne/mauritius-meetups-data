@@ -29,22 +29,31 @@ Direct integration with GitHub's repository dispatch API to trigger meetup data 
 1. **Navigate to GitHub Token Settings:**
    - Go to **GitHub** and sign in
    - Click your **profile picture** (top right) → **Settings**
-   - Left sidebar: **Developer settings** → **Personal access tokens** → **Tokens (classic)**
-   - *Direct link:* https://github.com/settings/tokens
+   - Left sidebar: **Developer settings** → **Personal access tokens** → **Fine-grained tokens**
+   - *Direct link:* https://github.com/settings/personal-access-tokens/new
 
-2. **Generate New Token:**
-   - Click **"Generate new token"** → **"Generate new token (classic)"**
-   - **Note/Description:** `Mauritius Meetups Data - Webhook Trigger`
+2. **Generate New Fine-Grained Token:**
+   - Click **"Generate new token"**
+   - **Token name:** `Mauritius Meetups Data - Webhook Trigger`
+   - **Expiration:** Choose 30, 60, 90 days (recommended: 90 days)
+   - **Description:** `Token for triggering meetup data fetch actions`
 
-3. **Configure Token:**
-   - **Expiration:** Choose 30, 60, 90 days, or no expiration
-   - **Scopes:** Select **✅ `repo`** (Full control of repositories)
-   - This includes repository dispatch, read/write access
+3. **Configure Repository Access:**
+   - **Resource owner:** Select your account or organization
+   - **Repository access:** Choose **"Selected repositories"**
+   - Search and select: **`mauritius-meetups-data`**
+   
+4. **Configure Repository Permissions:**
+   Under **Repository permissions**, set:
+   - **Actions:** ✅ **Write** (required for repository dispatch)
+   - **Contents:** ✅ **Write** (required for commits from GitHub Actions)
+   - **Metadata:** ✅ **Read** (automatically selected)
+   - Leave all other permissions as **No access**
 
-4. **Generate and Save:**
+5. **Generate and Save:**
    - Click **"Generate token"**
    - **⚠️ CRITICAL:** Copy the token immediately (only shown once!)
-   - Token format: `ghp_aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890`
+   - Token format: `github_pat_aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890`
 
 ### 3. Test the Integration
 
@@ -135,11 +144,12 @@ To give someone else access to trigger the GitHub Action:
 ## You now have access to trigger data fetches!
 
 ### Setup Steps:
-1. Create your own GitHub Personal Access Token:
-   - Go to: https://github.com/settings/tokens
-   - Generate new token (classic)
-   - Name: "Mauritius Meetups Trigger"  
-   - Scope: ✅ repo (full control)
+1. Create your own GitHub Fine-Grained Personal Access Token:
+   - Go to: https://github.com/settings/personal-access-tokens/new
+   - Generate new fine-grained token
+   - Name: "Mauritius Meetups Trigger"
+   - Repository: mauritius-meetups-data only
+   - Permissions: Actions (Write), Contents (Write), Metadata (Read)
    - Save the token securely
 
 2. Test access:
@@ -216,8 +226,12 @@ If someone gave you access to trigger this webhook:
 
 ### GitHub Token Authentication
 
-- **Scope Required**: `repo` (full repository access)
-- **Token Type**: Personal Access Token (classic) or Fine-grained token
+- **Token Type**: Fine-grained Personal Access Token (recommended)
+- **Repository Access**: Selected repositories only (mauritius-meetups-data)
+- **Permissions Required**: 
+  - Actions: **Write** (for repository dispatch)
+  - Contents: **Write** (for GitHub Actions to commit)
+  - Metadata: **Read** (automatically included)
 - **Security**: Tokens should be stored securely and rotated regularly
 - **Rate Limits**: GitHub API has rate limits (5000 requests/hour for authenticated requests)
 
@@ -396,9 +410,13 @@ func triggerDataFetch() bool {
 ### Common Issues
 
 **❌ "Bad credentials" / 401 Unauthorized**
-- Verify your GitHub token is correct
-- Ensure token has `repo` scope permissions
-- Check if token has expired
+- Verify your GitHub token is correct and hasn't expired
+- Check fine-grained token has required permissions:
+  - Actions: **Write** (for repository dispatch)
+  - Contents: **Write** (for GitHub Actions to commit)
+  - Metadata: **Read** (automatically included)
+- Ensure token has access to the specific repository
+- Verify user has repository collaborator access
 
 **❌ "Not Found" / 404**  
 - Verify repository name format: `owner/repo`
@@ -501,7 +519,8 @@ async function triggerWithRetry(maxRetries = 3) {
 ### For New Users
 
 **Token creation checklist:**
-- ✅ GitHub token created with `repo` scope
+- ✅ Fine-grained GitHub token created with Actions (Write), Contents (Write) permissions
+- ✅ Token has access to mauritius-meetups-data repository specifically
 - ✅ Repository access verified (can see the repo)
 - ✅ Local test successful: `GITHUB_TOKEN=token pnpm run trigger`
 - ✅ GitHub Actions tab shows successful run
