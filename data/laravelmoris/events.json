@@ -1,0 +1,58 @@
+[
+  {
+    "id": 5,
+    "type": "meetup",
+    "community": "laravelmoris",
+    "title": "Laravel Moris February Meetup",
+    "abstract": "Join us for the February edition of the Laravel Moris Meetup! this event is the perfect opportunity to connect with fellow enthusiasts, share insights, and stay updated on the latest trends and best practices in the Laravel ecosystem.",
+    "location": "Ringier, Grande Riviere Noire, Mauritius",
+    "registration": "https://www.meetup.com/laravel-moris/events/305451793/?eventOrigin=group_similar_events",
+    "date": "2025-02-15T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 469,
+    "type": "meetup",
+    "community": "laravelmoris",
+    "title": "March 2025 - Laravel Moris Meetup",
+    "abstract": "",
+    "location": "Workshop17 Vi véa",
+    "registration": "https://www.meetup.com/laravel-moris/events/306376440/",
+    "date": "2025-03-29T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 4307,
+    "type": "meetup",
+    "community": "laravelmoris",
+    "title": "May 2025 - Laravel Moris Meetup",
+    "abstract": "",
+    "location": null,
+    "registration": "https://www.meetup.com/laravel-moris/events/307399690/",
+    "date": "2025-05-31T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 8592,
+    "type": "meetup",
+    "community": "laravelmoris",
+    "title": "August 2025 - Laravel Moris Meetup",
+    "abstract": "",
+    "location": "Esokia - Agence Web Maurice",
+    "registration": "https://www.meetup.com/laravel-moris/events/309163628/",
+    "date": "2025-08-23T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  }
+]

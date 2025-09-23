@@ -1,0 +1,30 @@
+[
+  {
+    "id": 6717,
+    "type": "meetup",
+    "community": "pydata",
+    "title": "PyData MU Official Launch (DevCon)",
+    "abstract": "",
+    "location": null,
+    "registration": "https://www.meetup.com/pydata-mu/events/308728753/",
+    "date": "2025-07-26T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 9291,
+    "type": "meetup",
+    "community": "pydata",
+    "title": "Programmer's Day",
+    "abstract": null,
+    "location": null,
+    "registration": "https://www.meetup.com/pydata-mu/events/310933590/",
+    "date": "2025-09-27T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_310933590@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
+  }
+]

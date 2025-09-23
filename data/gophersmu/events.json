@@ -1,0 +1,16 @@
+[
+  {
+    "id": 4883,
+    "type": "meetup",
+    "community": "gophersmu",
+    "title": "Gophers.Mu 14-June-2025 meetup",
+    "abstract": "1. State of Go\n2. K0s: Kubernetes from Dev to Prod\n3. An Overview of NATS",
+    "location": "Workshop17 Telfair",
+    "registration": "https://docs.google.com/forms/d/e/1FAIpQLScm1og9ARPtF_kLYaYCtzIeR6Ed9gshq3ef3c6EPehdG0FnlQ/viewform",
+    "date": "2025-06-14T00:00:00.000000Z",
+    "capacity": 100,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  }
+]

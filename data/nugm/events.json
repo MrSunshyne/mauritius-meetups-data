@@ -1,0 +1,30 @@
+[
+  {
+    "id": 5496,
+    "type": "meetup",
+    "community": "nugm",
+    "title": ".NET Meetup 06/2025",
+    "abstract": "",
+    "location": "Rubric Quality Consultants, Ebene, Rue du Savoir, Ebene",
+    "registration": "https://www.meetup.com/net-user-group-mauritius/events/308563570/",
+    "date": "2025-06-27T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 8593,
+    "type": "meetup",
+    "community": "nugm",
+    "title": ".NET Meetup 08/2025 ",
+    "abstract": "",
+    "location": "Novity Mauritius",
+    "registration": "https://www.meetup.com/net-user-group-mauritius/events/310454487/",
+    "date": "2025-08-23T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 252,
+    "type": "meetup",
+    "community": "pymug",
+    "title": "Python Meetup Mar 2025",
+    "abstract": "",
+    "location": "Deve lopers Institute",
+    "registration": "https://www.meetup.com/pymauritius/events/306489993/",
+    "date": "2025-03-22T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 846,
+    "type": "meetup",
+    "community": "pymug",
+    "title": "Python Meetup Apr 2025",
+    "abstract": "",
+    "location": "Curepipe Business Center\\, MU\\, 248 A 10\\, Curepipe 744 30",
+    "registration": "https://www.meetup.com/pymauritius/events/307024338/",
+    "date": "2025-04-12T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 3936,
+    "type": "meetup",
+    "community": "pymug",
+    "title": "Python Meetup May 2025",
+    "abstract": "",
+    "location": "<error>",
+    "registration": "https://www.meetup.com/pymauritius/events/307675602/",
+    "date": "2025-05-24T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": null,
+    "rsvp": 0,
+    "attendees": 0
+  }
+]
