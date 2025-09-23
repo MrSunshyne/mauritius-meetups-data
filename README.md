@@ -64,9 +64,9 @@ pnpm run dev
 ### Available Scripts
 
 - `pnpm start` - Fetch all meetup data (uses Bun for TypeScript execution)
-- `pnpm fetch` - Alias for start
+- `pnpm fetch` - Alias for start  
 - `pnpm dev` - Development mode (same as start)
-- `bun src/index.ts` - Direct execution with Bun
+- `pnpm run trigger` - Trigger GitHub Action (requires GITHUB_TOKEN)
 
 ## 🤖 Automated Data Updates
 
