@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { FetchConfig, FetchResult } from './types';
-import { FETCH_OPTIONS } from './config';
+import { FetchConfig, FetchResult, Communities, CommunityMetadata } from './types';
+import { FETCH_OPTIONS, COMMUNITIES_FILE_PATH } from './config';
 
 /**
  * Utility function to delay execution
@@ -66,6 +66,60 @@ async function ensureDirectoryExists(filePath: string): Promise<void> {
 }
 
 /**
+ * Read communities metadata from file
+ */
+async function readCommunitiesMetadata(): Promise<Communities> {
+  try {
+    const data = await fs.readFile(COMMUNITIES_FILE_PATH, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.warn('⚠️  Could not read communities.json, creating default structure');
+    // Return empty object if file doesn't exist or is invalid
+    return {};
+  }
+}
+
+
+/**
+ * Update all communities metadata at once to avoid race conditions
+ */
+async function updateAllCommunitiesMetadata(results: FetchResult[]): Promise<void> {
+  try {
+    const communities = await readCommunitiesMetadata();
+    const currentTimestamp = new Date().toISOString();
+    
+    // Update all communities based on fetch results
+    for (const result of results) {
+      if (!communities[result.slug]) {
+        communities[result.slug] = { lastRun: null, lastUpdated: null, meta: {} };
+      }
+      
+      // Always update lastRun (regardless of success/failure)
+      communities[result.slug].lastRun = currentTimestamp;
+      
+      // Only update lastUpdated if the fetch was successful
+      if (result.success) {
+        communities[result.slug].lastUpdated = currentTimestamp;
+      }
+    }
+    
+    // Ensure directory exists
+    await ensureDirectoryExists(COMMUNITIES_FILE_PATH);
+    
+    // Write updated communities data
+    const jsonData = JSON.stringify(communities, null, 2);
+    await fs.writeFile(COMMUNITIES_FILE_PATH, jsonData, 'utf-8');
+    
+    const successfulCount = results.filter(r => r.success).length;
+    const failedCount = results.filter(r => !r.success).length;
+    
+    console.log(`📄 Updated communities metadata: ${successfulCount} successful, ${failedCount} failed`);
+  } catch (error) {
+    console.warn(`⚠️  Could not update communities metadata:`, error instanceof Error ? error.message : String(error));
+  }
+}
+
+/**
  * Fetch data for a single meetup group
  */
 export async function fetchMeetupData(config: FetchConfig): Promise<FetchResult> {
@@ -88,6 +142,8 @@ export async function fetchMeetupData(config: FetchConfig): Promise<FetchResult>
     
     console.log(`✅ ${config.slug}: Successfully saved ${eventsCount} events to ${config.outputPath} (${duration}ms)`);
     
+    // Note: Community metadata will be updated by fetchAllMeetupData to avoid race conditions
+    
     return {
       slug: config.slug,
       success: true,
@@ -98,6 +154,8 @@ export async function fetchMeetupData(config: FetchConfig): Promise<FetchResult>
     const errorMessage = error instanceof Error ? error.message : String(error);
     
     console.error(`❌ ${config.slug}: Failed to fetch data - ${errorMessage} (${duration}ms)`);
+    
+    // Note: Community metadata will be updated by fetchAllMeetupData to avoid race conditions
     
     return {
       slug: config.slug,
@@ -134,6 +192,9 @@ export async function fetchAllMeetupData(configs: FetchConfig[]): Promise<FetchR
       .filter(r => !r.success)
       .forEach(r => console.log(`   - ${r.slug}: ${r.error}`));
   }
+
+  // Update communities metadata with fetch results
+  await updateAllCommunitiesMetadata(results);
 
   return results;
 }

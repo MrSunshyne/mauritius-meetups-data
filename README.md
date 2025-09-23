@@ -8,6 +8,7 @@ The fetcher retrieves data from the meetup.mu api endpoints and stores them in o
 
 ```
 data/
+├── communities.json           # Community metadata & last updated timestamps
 ├── frontendmu/events.json
 ├── mscc/events.json
 ├── pydata/events.json
@@ -18,6 +19,29 @@ data/
 ├── mobilehorizon/events.json
 └── pymug/events.json
 ```
+
+### Community Metadata
+
+The `data/communities.json` file tracks when each community was last run and successfully updated:
+
+```json
+{
+  "frontendmu": {
+    "lastRun": "2025-09-23T19:27:30.470Z",
+    "lastUpdated": "2025-09-23T19:27:30.470Z",
+    "meta": {}
+  },
+  "mscc": {
+    "lastRun": "2025-09-23T19:27:30.470Z",
+    "lastUpdated": "2025-09-23T19:27:30.470Z", 
+    "meta": {}
+  }
+}
+```
+
+- **`lastRun`**: ISO timestamp of last fetch attempt (updated regardless of success/failure)
+- **`lastUpdated`**: ISO timestamp of last successful data fetch (null if never successful)
+- **`meta`**: Object for additional community-specific metadata (empty by default)
 
 ## 🤖 Automated Data Updates
 

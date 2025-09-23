@@ -34,3 +34,13 @@ export interface FetchResult {
   error?: string;
   eventsCount?: number;
 }
+
+export interface CommunityMetadata {
+  lastRun: string | null;
+  lastUpdated: string | null;
+  meta: Record<string, any>;
+}
+
+export interface Communities {
+  [slug: string]: CommunityMetadata;
+}

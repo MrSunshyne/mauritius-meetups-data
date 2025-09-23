@@ -60,3 +60,8 @@ export const FETCH_OPTIONS = {
   retries: 3,
   retryDelay: 1000, // 1 second
 } as const;
+
+/**
+ * Path to the communities metadata file
+ */
+export const COMMUNITIES_FILE_PATH = path.join(process.cwd(), 'data', 'communities.json');
