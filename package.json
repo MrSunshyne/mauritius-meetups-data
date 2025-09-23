@@ -1,0 +1,30 @@
+{
+  "name": "mauritius-meetups-data",
+  "version": "1.0.0",
+  "description": "Consider this repository to be a cache layer for meetup.mu API.",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun src/index.ts",
+    "start": "bun src/index.ts",
+    "fetch": "bun start"
+  },
+  "keywords": [
+    "mauritius",
+    "meetups",
+    "data",
+    "typescript",
+    "api",
+    "fetcher",
+    "bun"
+  ],
+  "author": "MrSunshyne",
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.4",
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2"
+  }
+}
