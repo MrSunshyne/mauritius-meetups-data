@@ -19,59 +19,24 @@ data/
 └── pymug/events.json
 ```
 
-## 🛠️ Installation
-
-This project uses `pnpm` for package management and Bun for native TypeScript execution.
-
-### Prerequisites
-
-- [Bun](https://bun.sh) 1.0.0 or higher
-
-```bash
-# Clone the repository
-git clone <your-repo-url>
-cd mauritius-meetups-data
-
-# Install dependencies
-pnpm install
-```
-
-## 📖 Usage
-
-### Fetch All Meetup Data
-
-```bash
-# Using pnpm scripts
-pnpm start
-
-# Or directly with Bun
-bun src/index.ts
-
-# Or alternatively
-pnpm fetch
-pnpm run dev
-```
-
-### Available Scripts
-
-- `pnpm start` - Fetch all meetup data (uses Bun for TypeScript execution)
-- `pnpm fetch` - Alias for start  
-- `pnpm dev` - Development mode (same as start)
-- `pnpm run trigger` - Trigger GitHub Action (requires GITHUB_TOKEN)
-
 ## 🤖 Automated Data Updates
 
 The repository includes a GitHub Action that automatically fetches and updates meetup data daily.
 
-### How It Works
+### Trigger from external services with Webhook Support
 
-The GitHub Action (`.github/workflows/fetch-meetup-data.yml`):
+External services can trigger data fetches by calling GitHub's repository dispatch API directly:
 
-1. **Runs daily at 8 AM UTC** - Ensures fresh data every day
-2. **Can be triggered manually** - Via GitHub's "Actions" tab
-3. **Fetches all meetup data** - Using the same Bun-powered script
-4. **Smart commits** - Only commits when data actually changes
-5. **Clean logging** - Shows exactly what was updated
+```bash
+curl -X POST https://api.github.com/repos/MrSunshyne/mauritius-meetups-data/dispatches \
+  -H "Authorization: Bearer YOUR_GITHUB_TOKEN" \
+  -H "Accept: application/vnd.github.v3+json" \
+  -H "Content-Type: application/json" \
+  -d '{"event_type": "fetch-meetup-data"}'
+```
+
+See [`WEBHOOK.md`](WEBHOOK.md) for complete integration guide with examples in multiple languages.
+
 
 ### Manual Trigger
 
@@ -81,23 +46,6 @@ You can manually trigger the data fetch from GitHub:
 2. Select "Fetch Meetup Data" workflow
 3. Click "Run workflow"
 4. The action will fetch data and commit any changes
-
-### Webhook Support
-
-External services can trigger data fetches by calling GitHub's repository dispatch API directly:
-
-**Webhook URL:** `https://api.github.com/repos/MrSunshyne/mauritius-meetups-data/dispatches`
-
-**Required Headers:**
-```
-Authorization: Bearer YOUR_GITHUB_TOKEN
-Accept: application/vnd.github.v3+json
-Content-Type: application/json
-```
-
-**Body:** `{"event_type": "fetch-meetup-data"}`
-
-See [`WEBHOOK.md`](WEBHOOK.md) for complete integration guide with examples in multiple languages.
 
 ## 🔧 Configuration
 
