@@ -26,5 +26,19 @@
     "meetup_id": null,
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9294,
+    "type": "meetup",
+    "community": "nugm",
+    "title": ".NET Conf 2025 [NUGM/Mauritius]",
+    "abstract": null,
+    "location": null,
+    "registration": "https://www.meetup.com/net-user-group-mauritius/events/311759640/",
+    "date": "2025-11-15T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_311759640@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
