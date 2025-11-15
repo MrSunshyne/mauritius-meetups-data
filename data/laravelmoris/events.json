@@ -54,5 +54,19 @@
     "meetup_id": null,
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9296,
+    "type": "meetup",
+    "community": "laravelmoris",
+    "title": "November 2025 - Laravel Moris Meetup",
+    "abstract": null,
+    "location": null,
+    "registration": "https://www.meetup.com/laravel-moris/events/312003794/",
+    "date": "2025-11-29T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_312003794@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
