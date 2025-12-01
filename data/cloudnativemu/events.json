@@ -236,5 +236,19 @@
     "meetup_id": "cnmu-16",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9298,
+    "type": "meetup",
+    "community": "cloudnativemu",
+    "title": "Cloud Native Mauritius December Meetup",
+    "abstract": null,
+    "location": "Kuumba Coffee, Telfair",
+    "registration": "https://community.cncf.io/e/mmt6fh/",
+    "date": "2025-12-06T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "cnmu-17",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
