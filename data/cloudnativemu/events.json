@@ -250,5 +250,19 @@
     "meetup_id": "cnmu-17",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9309,
+    "type": "meetup",
+    "community": "cloudnativemu",
+    "title": "Cloud Native Mauritius February Meetup",
+    "abstract": null,
+    "location": "TBD",
+    "registration": "https://meetup.mu/meetup/9309",
+    "date": "2026-02-28T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "cnmu-18",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]

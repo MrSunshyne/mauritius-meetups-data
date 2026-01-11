@@ -75,7 +75,7 @@
     "community": "pymug",
     "title": "Python Meetup March",
     "abstract": null,
-    "location": null,
+    "location": "TBD",
     "registration": "https://www.meetup.com/pymauritius/events/312511602/",
     "date": "2026-03-14T10:00:00.000000Z",
     "capacity": 50,
@@ -178,6 +178,20 @@
     "date": "2026-10-17T10:00:00.000000Z",
     "capacity": 50,
     "meetup_id": "event_312511635@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 9310,
+    "type": "meetup",
+    "community": "pymug",
+    "title": "Python Meetup November",
+    "abstract": null,
+    "location": "TBD",
+    "registration": "https://www.meetup.com/pymauritius/events/312511638/",
+    "date": "2026-11-14T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_312511638@meetup.com",
     "rsvp": 0,
     "attendees": 0
   }
