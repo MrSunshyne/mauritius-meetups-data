@@ -642,5 +642,19 @@
     "meetup_id": "frontendmu-67",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9317,
+    "type": "meetup",
+    "community": "frontendmu",
+    "title": "FrontendMU The February Meetup",
+    "abstract": "",
+    "location": "Spoon Consulting Offices",
+    "registration": "https://frontend.mu/meetup/68",
+    "date": "2026-02-28T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "frontendmu-68",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
