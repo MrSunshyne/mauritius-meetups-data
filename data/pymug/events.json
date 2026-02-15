@@ -208,5 +208,19 @@
     "meetup_id": "event_312862228@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9320,
+    "type": "meetup",
+    "community": "pymug",
+    "title": "Python Meetup November",
+    "abstract": null,
+    "location": null,
+    "registration": "https://www.meetup.com/pymauritius/events/312511639/",
+    "date": "2026-12-12T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_312511639@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
