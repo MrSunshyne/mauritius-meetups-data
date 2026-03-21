@@ -26,5 +26,19 @@
     "meetup_id": "event_310933590@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9325,
+    "type": "meetup",
+    "community": "pydata",
+    "title": "PyData London 2026",
+    "abstract": null,
+    "location": null,
+    "registration": "https://www.meetup.com/pydata-mu/events/313869522/",
+    "date": "2026-06-05T11:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_313869522@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
