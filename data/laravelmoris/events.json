@@ -68,5 +68,19 @@
     "meetup_id": "event_312003794@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9326,
+    "type": "meetup",
+    "community": "laravelmoris",
+    "title": "Meet and Coffee",
+    "abstract": null,
+    "location": "Café Lux",
+    "registration": "https://www.meetup.com/laravel-moris/events/314309471/",
+    "date": "2026-04-17T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_314309471@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
