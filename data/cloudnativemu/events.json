@@ -306,5 +306,19 @@
     "meetup_id": "cnmu-21",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9379,
+    "type": "meetup",
+    "community": "cloudnativemu",
+    "title": "Cloud Native Mauritius May Meetup ft Gophers MU",
+    "abstract": null,
+    "location": "TBD",
+    "registration": "https://meetup.mu/meetup/9379",
+    "date": "2026-05-30T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "cnmu-22",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
