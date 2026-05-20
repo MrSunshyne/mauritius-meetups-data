@@ -82,5 +82,19 @@
     "meetup_id": "event_314309471@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9380,
+    "type": "meetup",
+    "community": "laravelmoris",
+    "title": "Laravel Moris Meetup — May 2026 Edition 🚀",
+    "abstract": null,
+    "location": "XEFI Mauritius Center",
+    "registration": "https://www.meetup.com/laravel-moris/events/314673218/",
+    "date": "2026-05-30T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_314673218@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
