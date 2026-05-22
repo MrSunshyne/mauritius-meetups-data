@@ -698,5 +698,61 @@
     "meetup_id": "frontendmu-1df20e74-d11e-45fd-8b2b-426114ba2e84",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9381,
+    "type": "meetup",
+    "community": "frontendmu",
+    "title": "FrontendMU The September Meetup",
+    "abstract": "",
+    "location": "Novity",
+    "registration": "https://frontend.mu/meetup/2026-september",
+    "date": "2026-09-19T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "frontendmu-7ecc1818-4a9c-4dc5-afe5-0d1296554854",
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 9382,
+    "type": "meetup",
+    "community": "frontendmu",
+    "title": "FrontendMU The August Meetup",
+    "abstract": "",
+    "location": "TBA",
+    "registration": "https://frontend.mu/meetup/2026-august",
+    "date": "2026-08-22T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "frontendmu-6ff25ce0-ee35-4cc5-8ffe-061bb39b5d16",
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 9383,
+    "type": "meetup",
+    "community": "frontendmu",
+    "title": "FrontendMU The July Meetup",
+    "abstract": "",
+    "location": "TBA",
+    "registration": "https://frontend.mu/meetup/2026-july",
+    "date": "2026-07-18T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "frontendmu-f7c330b7-43aa-416b-8540-62abcf6cc027",
+    "rsvp": 0,
+    "attendees": 0
+  },
+  {
+    "id": 9384,
+    "type": "meetup",
+    "community": "frontendmu",
+    "title": "FrontendMU The June Meetup",
+    "abstract": "",
+    "location": "TBA",
+    "registration": "https://frontend.mu/meetup/2026-june",
+    "date": "2026-06-20T00:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "frontendmu-a095d511-a02a-442b-a6c4-dc4ad001e0fb",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
