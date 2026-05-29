@@ -40,5 +40,19 @@
     "meetup_id": "event_311759640@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9385,
+    "type": "meetup",
+    "community": "nugm",
+    "title": "Microsoft Build //localhost",
+    "abstract": null,
+    "location": "Nexteracom Tower 1 (12th Floor)",
+    "registration": "https://www.meetup.com/net-user-group-mauritius/events/314991502/",
+    "date": "2026-06-06T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_314991502@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
