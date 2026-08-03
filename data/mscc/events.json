@@ -264,5 +264,19 @@
     "meetup_id": "event_312968861@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9433,
+    "type": "meetup",
+    "community": "mscc",
+    "title": "MSCC Monthly Meetup",
+    "abstract": null,
+    "location": "Ebene",
+    "registration": "https://www.meetup.com/mauritiussoftwarecraftsmanshipcommunity/events/315937615/",
+    "date": "2026-08-08T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_315937615@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
