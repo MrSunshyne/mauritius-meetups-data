@@ -96,5 +96,19 @@
     "meetup_id": "event_314673218@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9436,
+    "type": "meetup",
+    "community": "laravelmoris",
+    "title": "Laravel Moris x CNCFMU — Community Tech Meetup | August 2026 🚀",
+    "abstract": null,
+    "location": "Esokia – Agence Web Maurice",
+    "registration": "https://www.meetup.com/laravel-moris/events/316178848/",
+    "date": "2026-08-29T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_316178848@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
