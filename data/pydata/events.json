@@ -40,5 +40,19 @@
     "meetup_id": "event_313869522@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9439,
+    "type": "meetup",
+    "community": "pydata",
+    "title": "PyData Global 2026",
+    "abstract": null,
+    "location": null,
+    "registration": "https://www.meetup.com/pydata-mu/events/317164800/",
+    "date": "2026-12-09T15:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_317164800@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
