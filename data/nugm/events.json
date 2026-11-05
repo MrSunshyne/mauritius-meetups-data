@@ -68,5 +68,19 @@
     "meetup_id": "event_316993856@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9440,
+    "type": "meetup",
+    "community": "nugm",
+    "title": ".NET Conf 2026 [NUGM/Mauritius]",
+    "abstract": null,
+    "location": "Rue des Fascines, Vivea Park, St Pierre",
+    "registration": "https://www.meetup.com/net-user-group-mauritius/events/317283975/",
+    "date": "2026-11-14T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_317283975@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
