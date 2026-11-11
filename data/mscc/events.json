@@ -278,5 +278,19 @@
     "meetup_id": "event_315937615@meetup.com",
     "rsvp": 0,
     "attendees": 0
+  },
+  {
+    "id": 9441,
+    "type": "meetup",
+    "community": "mscc",
+    "title": ".NET Conference 2026",
+    "abstract": null,
+    "location": "Infomil (Mauritius) Ltd",
+    "registration": "https://www.meetup.com/mauritiussoftwarecraftsmanshipcommunity/events/317352709/",
+    "date": "2026-11-14T10:00:00.000000Z",
+    "capacity": 50,
+    "meetup_id": "event_317352709@meetup.com",
+    "rsvp": 0,
+    "attendees": 0
   }
 ]
