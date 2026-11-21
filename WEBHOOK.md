@@ -247,14 +247,14 @@ export GITHUB_TOKEN=ghp_your_token
 pnpm run trigger
 
 # Or explicitly
-bun src/trigger-webhook.ts trigger
+pnpm run trigger trigger
 ```
 
 ### Help and Documentation
 
 ```bash
 # Show usage help
-bun src/trigger-webhook.ts help
+pnpm run trigger help
 ```
 
 ## 🏗️ Integration Options

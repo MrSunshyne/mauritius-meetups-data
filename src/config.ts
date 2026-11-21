@@ -1,4 +1,4 @@
-import { FetchConfig } from './types';
+import type { FetchConfig } from './types.ts';
 import path from 'path';
 
 /**

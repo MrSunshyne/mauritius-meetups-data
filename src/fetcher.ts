@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { FetchConfig, FetchResult, Communities, CommunityMetadata } from './types';
-import { FETCH_OPTIONS, COMMUNITIES_FILE_PATH } from './config';
+import type { FetchConfig, FetchResult, Communities } from './types.ts';
+import { FETCH_OPTIONS, COMMUNITIES_FILE_PATH } from './config.ts';
 
 /**
  * Utility function to delay execution

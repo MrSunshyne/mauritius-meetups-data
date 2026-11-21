@@ -22,25 +22,24 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0  # Full git history for better commit context
       
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: latest
-      
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v6
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
-          version: latest
+          node-version: 24
+          cache: pnpm
       
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       
       - name: Fetch meetup data
-        run: bun start
+        run: pnpm run start
         env:
           # Ensure consistent timezone for data fetching
           TZ: UTC
@@ -59,7 +58,7 @@ jobs:
       
       - name: Commit and push changes
         if: steps.changes.outputs.changes == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore: update meetup data'
           commit_user_name: 'github-actions[bot]'

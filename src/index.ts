@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { fetchAllMeetupData } from './fetcher';
-import { MEETUP_GROUPS } from './config';
+import { fetchAllMeetupData } from './fetcher.ts';
+import { MEETUP_GROUPS } from './config.ts';
 
 /**
  * Main entry point for the Mauritius Meetups Data Fetcher
@@ -31,6 +31,6 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
-export { fetchAllMeetupData, fetchMeetupData } from './fetcher';
-export { MEETUP_GROUPS, FETCH_OPTIONS } from './config';
-export * from './types';
+export { fetchAllMeetupData, fetchMeetupData } from './fetcher.ts';
+export { MEETUP_GROUPS, FETCH_OPTIONS } from './config.ts';
+export type * from './types.ts';

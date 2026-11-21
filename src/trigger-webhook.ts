@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
 /**
  * CLI Tool to Trigger GitHub Action
@@ -73,7 +73,7 @@ function showHelp() {
 🎯 Mauritius Meetups GitHub Action Trigger
 
 Usage:
-  bun src/trigger-webhook.ts [command]
+  pnpm run trigger [command]
 
 Commands:
   trigger   Trigger GitHub Action directly via API (default)
@@ -85,10 +85,10 @@ Environment Variables:
 
 Examples:
   # Trigger GitHub Action
-  GITHUB_TOKEN=ghp_xxxx bun src/trigger-webhook.ts trigger
+  GITHUB_TOKEN=ghp_xxxx pnpm run trigger trigger
 
   # Or just run without command (defaults to trigger)
-  GITHUB_TOKEN=ghp_xxxx bun src/trigger-webhook.ts
+  GITHUB_TOKEN=ghp_xxxx pnpm run trigger
 
 External Services can trigger the GitHub Action by calling:
   POST https://api.github.com/repos/MrSunshyne/mauritius-meetups-data/dispatches

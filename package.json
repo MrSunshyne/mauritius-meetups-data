@@ -5,10 +5,10 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun src/index.ts",
-    "start": "bun src/index.ts",
-    "fetch": "bun start",
-    "trigger": "bun src/trigger-webhook.ts"
+    "dev": "node src/index.ts",
+    "start": "node src/index.ts",
+    "fetch": "pnpm run start",
+    "trigger": "node src/trigger-webhook.ts"
   },
   "keywords": [
     "mauritius",
@@ -16,16 +16,15 @@
     "data",
     "typescript",
     "api",
-    "fetcher",
-    "bun"
+    "fetcher"
   ],
   "author": "MrSunshyne",
   "license": "MIT",
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@12.21.0",
   "engines": {
-    "bun": ">=1.0.0"
+    "node": ">=24"
   },
   "devDependencies": {
-    "@types/node": "^24.5.2"
+    "@types/node": "^26.6.6"
   }
 }
