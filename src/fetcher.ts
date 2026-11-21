@@ -1,7 +1,13 @@
 import fs from 'fs/promises';
+import net from 'net';
 import path from 'path';
 import type { FetchConfig, FetchResult, Communities } from './types.ts';
 import { FETCH_OPTIONS, COMMUNITIES_FILE_PATH } from './config.ts';
+
+// meetup.mu is hosted in Mauritius and advertises an AAAA record. From CI runners
+// (no IPv6) the IPv4 connect takes ~270ms, longer than Node's default 250ms
+// per-address happy-eyeballs timeout, so every fetch fails with ETIMEDOUT.
+net.setDefaultAutoSelectFamilyAttemptTimeout(2000);
 
 /**
  * Utility function to delay execution
